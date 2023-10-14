@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "153619363008",
+    "project_id": "note-sphere",
+    "storage_bucket": "note-sphere.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153619363008:android:c4e3b3cfa9b4108457e925",
+        "android_client_info": {
+          "package_name": "com.notesphere.note_sphere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0rq1rE-2DPRG-4MHvp7CemgENKhXjzlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
