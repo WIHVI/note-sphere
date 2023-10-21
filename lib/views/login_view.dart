@@ -30,6 +30,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.limeAccent,
         title: const Text('Login'),
       ),
       body: Column(
@@ -63,13 +64,15 @@ class _LoginViewState extends State<LoginView> {
                   email: email,
                   password: password,
                 );
-                print(userCredential);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/notes/',
+                  (route) => false,
+                );
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'INVALID_LOGIN_CREDENTIALS') {
                   print('Invalid login credentials');
                 } else {
                   print('Failed with error code: ${e.code}');
-                  print(e.message);
                 }
               }
             },
