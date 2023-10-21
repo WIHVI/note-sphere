@@ -61,8 +61,7 @@ class _LoginViewState extends State<LoginView> {
               final String password = _password.text;
 
               try {
-                final UserCredential userCredential =
-                    await FirebaseAuth.instance.signInWithEmailAndPassword(
+                await FirebaseAuth.instance.signInWithEmailAndPassword(
                   email: email,
                   password: password,
                 );
@@ -72,23 +71,23 @@ class _LoginViewState extends State<LoginView> {
                 );
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'INVALID_LOGIN_CREDENTIALS') {
-                  showErrorDialog(
+                  await showErrorDialog(
                     context,
                     'Invalid login credentials',
                   );
                 } else if (e.code == 'invalid-email') {
-                  showErrorDialog(
+                  await showErrorDialog(
                     context,
                     'Invalid email',
                   );
                 } else {
-                  showErrorDialog(
+                  await showErrorDialog(
                     context,
                     'Something went wrong, please try again',
                   );
                 }
               } catch (e) {
-                showErrorDialog(
+                await showErrorDialog(
                   context,
                   e.toString(),
                 );
